@@ -1,3 +1,4 @@
+
 buildscript {
     ext { //ext:전역변수를 설정하겠다
         springBootVersion = '2.1.7.RELEASE' //springBootVersion 전역변수 생성
@@ -23,9 +24,6 @@ group 'com.jojoldu.book'
 version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
-repositories {
-    mavenCentral()
-}
 
 repositories { //어떤 원격 저장소에서 받을지
     mavenCentral()
@@ -34,5 +32,8 @@ repositories { //어떤 원격 저장소에서 받을지
 
 dependencies { //프로젝트 개발에 필요한 의존성들을 선언하는 곳
     implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.projectlombok:lombok')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation('com.h2database:h2')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
