@@ -3,6 +3,21 @@ language: java
 before_install :
   - chmod +x gradlew
 
+jdk:
+  - openjdk8
+
+branches:
+  only:
+    - master
+
+# Travis CI 서버의 Home
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.gradle'
+
+script: "./gradlew clean build"
+
 before_deploy:
   - zip -r spring-boot-lee-youn *
   - mkdir -p deploy
@@ -19,21 +34,6 @@ deploy:
     acl: private
     local_dir: deploy
     wait-until-deployed: true
-
-jdk:
-  - openjdk8
-
-branches:
-  only:
-    - master
-
-# Travis CI 서버의 Home
-cache:
-  directories:
-    - '$HOME/.m2/repository'
-    - '$HOME/.gradle'
-
-script: "./gradlew clean build"
 
 # CI 실행 완료시 메일로 알람
 notifications:
