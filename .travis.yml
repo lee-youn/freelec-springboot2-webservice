@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - openjdk1.8.0
+  - openjdk8
 
 branches:
   only:
@@ -9,8 +9,8 @@ branches:
 # Travis CI 서버의 Home
 cache:
   directories:
-    - '$HOME/.m2/repository'
-    - '$HOME/.gradle'
+    - '$HOME/ .m2/repository'
+    - '$HOME/ .gradle'
 
 script: "./gradlew clean assemble"
 
