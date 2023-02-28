@@ -19,7 +19,7 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r spring-boot-study*
+  - zip -r spring-boot-study *
   - mkdir -p deploy
   - mv spring-boot-study.zip deploy/spring-boot-study.zip
 
