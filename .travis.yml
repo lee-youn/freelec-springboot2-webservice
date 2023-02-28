@@ -19,9 +19,9 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r spring-boot-leeyoun *
+  - zip -r spring-boot-study*
   - mkdir -p deploy
-  - mv spring-boot-leeyoun.zip deploy/spring-boot-leeyoun.zip
+  - mv spring-boot-study.zip deploy/spring-boot-study.zip
 
 deploy:
   - provider: s3
