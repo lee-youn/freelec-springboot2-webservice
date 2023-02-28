@@ -26,8 +26,8 @@ before_deploy:
   - mv spring-boot-study.zip deploy/spring-boot-study.zip
 deploy:
   - provider: s3
-    access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
-    secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
+    access_key_id: lee-youn # Travis repo settings에 설정된 값
+    secret_access_key: 2w$+1U1[ # Travis repo settings에 설정된 값
     bucket: leeyoun-springboot-build # S3 버킷
     region: ap-northeast-2
     skip_cleanup: true
