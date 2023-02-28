@@ -19,9 +19,9 @@ before_install :
   - chmod +x gradlew
 
 before_deploy:
-  - zip -r spring-boot-study *
+  - zip -r spring-boot-lee-youn *
   - mkdir -p deploy
-  - mv spring-boot-study.zip deploy/spring-boot-study.zip
+  - mv spring-boot-lee-youn.zip deploy/spring-boot-lee-youn.zip
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
