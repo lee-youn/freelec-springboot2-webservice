@@ -1,3 +1,5 @@
+
+
 language: java
 
 before_install :
@@ -19,24 +21,22 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r spring-boot-study *
+  - zip -r freelec-springboot2-webservice *
   - mkdir -p deploy
-  - mv spring-boot-study.zip deploy/spring-boot-study.zip
-
+  - mv freelec-springboot2-webservice.zip deploy/freelec-springboot2-webservice.zip
 deploy:
   - provider: s3
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-
-    bucket: leeyoun-springboot-build
+    access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
+    secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
+    bucket: leeoun-springboot-build # S3 버킷
     region: ap-northeast-2
     skip_cleanup: true
-    acl: private
-    local_dir: deploy
+    acl: private # zip 파일 접근을 private으로
+    local_dir: deploy # before_deploy에서 생성한 디렉토리
     wait-until-deployed: true
 
 # CI 실행 완료시 메일로 알람
 notifications:
   email:
     recipients:
-      - 5816654@naver.com
+      - jojoldu@gmail.com
